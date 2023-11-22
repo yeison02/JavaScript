@@ -69,8 +69,12 @@ function cocinarMicroondas(plato, tiempo, potencia) {
 
 //Si usamos bien los parametos, la funcion funciona correctamente
 const resultado = cocinarMicroondas("🐥", 1, 5);
-console.log(resultado);
+console.log(resultado); // ->🍗
 
 //Si cmbiamos el orden de los parametos la funcion no funciona
 const result = cocinarMicroondas(1, 5, "🐥");
-console.log(result);
+console.log(result); // -> "❌Plato no soportado"
+
+/*
+Esto es porque la función espera que el primer parámetro sea el plato, el segundo el tiempo y el tercero la potencia. Si cambiamos el orden, podemos tener comportamientos inesperados o errores.
+*/
