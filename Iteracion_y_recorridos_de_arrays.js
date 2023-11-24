@@ -72,3 +72,19 @@ let frutast = ["🍎", "🍌", "🍓"];
 frutas.forEach((frut) => {
   console.log(frut); //imprime el elemto en la posicion i
 });
+
+/*
+¿Cuál usar? Depende...
+MÉTODO	ACCESO AL ÍNDICE	ACCESO AL VALOR	  PUEDE USAR BREAK	  CONTROL MANUAL DEL ÍNDICE
+for	          ✅	                 ✅	             ✅	                   ✅
+while	        ✅	                 ✅	             ✅                     ✅
+for...of	    ❌	                 ✅	             ✅	                   ❌
+forEach	      ✅	                 ✅	             ❌*	                   ❌
+
+-Aunque técnicamente no puedes utilizar la sentencia break para salir de forEach, puedes simular esto lanzando una excepción y capturándola en un bloque try/catch externo. Obviamente es una mala práctica que no te recomiendo.
+Cada uno de estos métodos tiene sus propios casos de uso. for y while son más generales y te permiten controlar el índice manualmente, lo que es útil si necesitas saltar a índices específicos, cambiar el orden de iteración o salir del bucle antes de que se complete.
+
+for...of es más fácil de usar cuando solo necesitas los valores de un array y no te importa el índice. Es especialmente útil también cuando estás trabajando con iterables que no son arrays, como las cadenas de caracteres o los conjuntos (sets).
+
+Finalmente, forEach es una forma muy eficiente y legible de iterar sobre un array si no necesitas break y si no necesitas controlar manualmente el índice.
+*/
