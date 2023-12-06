@@ -111,3 +111,36 @@ console.log(personna.walk()); //Estoy caminando
 
 let metodo = "walk";
 console.log(personna[metodo]()); //Estoy caminando
+
+/*
+persona[method]() parece un poco raro, pero si lo separas parte por parte, verás que tiene sentido. persona es el objeto. Accedemos a la propiedad method del objeto persona con persona[method]. Y, finalmente, ejecutamos la función con persona[method](). Es decir, estamos ejecutando persona.walk().
+
+
+Añadir, eliminar y modificar propiedades de un objeto
+
+Igual que podemos acceder a las propiedades de un objeto, podemos añadir nuevas propiedades o modificar las existentes.
+*/
+
+const peersona = {
+  name: "Dani",
+};
+
+peersona.age = 25;
+console.log(peersona); // {name: "Dani", age: 25}
+
+/* 
+En el código estamos modificando el objeto persona añadiendo la propiedad age con el valor 25.
+
+Fíjate que, al igual que en los Arrays, podemos añadir propiedades a un objeto aunque sea una constante. Esto es porque no estamos reasignando la variable persona, si no que estamos modificando una propiedad interna del objeto.
+
+Eliminar propiedades de un objeto
+Para eliminar una propiedad de un objeto usamos la palabra reservada delete.
+*/
+
+const ppersona = {
+  name: "Dani",
+  age: 30,
+};
+
+delete ppersona.age;
+console.log(ppersona); // -> {name: "Dani"}
