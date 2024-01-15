@@ -144,3 +144,142 @@ const ppersona = {
 
 delete ppersona.age;
 console.log(ppersona); // -> {name: "Dani"}
+
+//Desestructuracion de objetos
+
+const user = {
+  name: "Manz",
+
+  life: 99,
+};
+
+const { name, role, life } = user;
+
+console.log({ name, role, life });
+
+/*
+//Renombrar propiedades
+
+const {name, role: type, life} = user
+
+console.log({ name, type, life }) -> { name: "Manz", type: "Streamer", life: 99 }
+
+// Establecer un valor por defecto si la propiedad role y life no existen en el objeto user
+
+const { name, role = "normal user", life = 100 } = user;
+
+console.log({ name, role, life }); -> { name: "Manz", role: "normal user", life: 100 }
+*/
+
+//Reestructurando nuevos objetos
+
+const usuario = {
+  name: "Manz",
+  role: "streamer",
+  life: 99,
+};
+
+const fullUser = {
+  ...usuario,
+  power: 25,
+  life: 50,
+};
+
+console.log(fullUser); // {name:"Manz", role: "streamer", life: 50, power: 25}
+
+//Haciendo copias de objetos
+
+const copy = {
+  name: "Manz",
+  role: "streamer",
+  life: 99,
+  features: ["learn", "code", "paint"],
+};
+
+const fullCopy = {
+  ...copy,
+  // ...structuredClone(copy) -> Crea una copia del objeto user y no una referencia
+  power: 25,
+  life: 50,
+};
+
+console.log(copy.features); // ["learn", "code", "paint"]
+console.log(fullCopy.features); // ["learn", "code", "paint"]
+
+fullCopy.features[0] = "program";
+
+console.log(fullCopy.features); // ["program", "code", "paint"]
+console.log(copy.features); // ["program", "code", "paint"]
+
+//Estructuras anidadas
+
+const streamer = {
+  name: "Manz",
+  role: "streamer",
+  attributes: {
+    height: 183,
+    favColor: "blueviolet",
+    hairColor: "black",
+  },
+};
+
+//Extraemos la propiedad attributes (objeto con 3 propiedades)
+const { attributes } = streamer;
+console.log(attributes); // { height: 183, favColor: "blueviolet", hairColor: "black"}
+
+//Extraemos la propiedad height (183)
+
+const {
+  attributes: { height },
+} = streamer;
+console.log(height); // 183
+
+//Extraemos la propiedad height (183) y la cambiamos de nombre por size
+const {
+  attributes: { height: size },
+} = streamer;
+console.log(size); // 183
+
+//Desestructurracion (rest)
+
+const users = {
+  nombre: "Manz",
+  role: "streamer",
+  life: 99,
+};
+
+const { nombre, ...rest } = users;
+
+console.log(users);
+
+//Prametros desestructurados
+
+const userr = {
+  name: "Manz",
+  role: "streamer",
+  life: 99,
+};
+
+function show(data) {
+  const stars = "⭐".repeat(data.life / 20);
+  return `Nombre: ${data.name} (${data.role}) ${stars}`;
+}
+
+console.log(show(userr)); // "Nombre: Manz (streamer) ⭐⭐⭐⭐)"
+
+/*
+Desestructuramos los parametros de la funcion show() para que sea mas facil de escribir
+
+const user = {
+  name: "Manz",
+  role: "streamer", 
+  life: 99
+}
+
+function show({ name, role, life }) {
+  const stars = "⭐".repeat(life / 20);
+  return `Nombre: ${name} (${role}) ${stars}`;
+}
+
+show(user);   // "Nombre: Manz (streamer) ⭐⭐⭐⭐"
+*/
