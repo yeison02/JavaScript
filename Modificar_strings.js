@@ -53,7 +53,17 @@ console.log(string.trimEnd()); // "  !Saluda a nuestro nuevo rey gato¡"
 /* Alternativas para crear strings / Concatenar(unir textos)
 
 
-Método	Descripción
- .concat(text1, text2...)	Devuelve el , unido (concatenado) a las variables text1, text2...
-
+Método	                    Descripción
+.concat(text1, text2...)	Devuelve el string, unido (concatenado) a las variables text1, text2...
 */
+
+const concat = "Manz";
+//Utilizando el metodo concat
+console.log(concat.concat("i", "to")); // "Manzito"
+console.log(concat.concat(4, 5)); // "Manz45"
+console.log(concat.concat(4 + 5)); // "Manz9"
+
+//Utilizando el operador +
+console.log(concat + "i" + "to"); // "Manzito"
+console.log(concat + 4 + 5); // "Manz45"
+console.log(concat + (4 + 5)); // "Manz9"
