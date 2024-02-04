@@ -5,5 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exportar e importar modulos en JavaScript</title>
   </head>
-  <body></body>
+  <body>
+    <!-- Import Maps-->
+    <script type="importmap">
+      {
+        "imports": {
+          "dayjs": "/node_modules/dayjs/esm/dayjs.js",
+          "lodash": "/node_modules/lodash-es/lodash.js"
+        }
+      }
+    </script>
+
+    <!-- Importaciones a una URL/CDN
+    <script>
+      {
+      "imports": {
+        "lodash": "https://unpkg.com/lodash-es@4.17.21/lodash.js",
+        "lodash/": "https://unpkg.com/lodash-es@4.17.21/",
+        "./lodash.js": "https://unpkg.com/lodash-es@4.17.21/lodash.js"
+      }
+      }
+    </script>
+
+    Diferentes impotaciones
+    <script type="importmap">
+  {
+    "imports": {
+      "lodash": "https://unpkg.com/lodash-es@4.17.21/lodash.js",
+      "howler": "/libs/howler.js"
+    },
+    "scopes": {
+      "/local/": {
+        "lodash": "/libs/lodash.js"
+      },
+      "/cdn/": {
+        "howler": "https://unpkg.com/howler@2.2.3/dist/howler.js"
+      }
+    }
+  }
+
+  Mapa de importaciones externo
+  <script type="importmap" src="./importmap.json"></script>
+</script> -->
+  </body>
 </html>
