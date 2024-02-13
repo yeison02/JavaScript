@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diferencias entre getElementById vs querySelector</title>
     <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="Gestionar_elementos_del_DOM.js"></script>
+    <script type="module" src="Contenido_del_DOM.js"></script>
   </head>
   <body>
-    <div id="pages" class="info data dark" data-number="5">Informacion</div>
-    <button>Clickme</button>
     <!--
+      <div id="pages" class="info data dark" data-number="5">Informacion</div>
+      <button>Clickme</button>
     <div id="page"></div>
     <div class="item"></div>
     <div class="item"></div>
@@ -24,5 +24,27 @@
       <div class="info"></div>
     </main>
     <input type="text" name="nickname" />-->
+
+    <!--Contenido del DOM-->
+    <div class="contenedor">
+      <div class="parent">
+        <p>Hola a todos.</p>
+        <p class="message">Mi nombre es <strong>Yeison</strong></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <p>Hola a todos.</p>
+      <p>
+        Me llamo <strong>Yeison</strong>.
+        <mark style="display: none">New message</mark>
+      </p>
+      <p hidden>Esto es un mensaje posterior oculto semánticamente.</p>
+      <details>
+        <summary>Más información</summary>
+        <div>Esto es un desplegable que está colapsado.</div>
+      </details>
+    </div>
+    <div class="data"></div>
   </body>
 </html>
